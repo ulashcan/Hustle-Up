@@ -1,0 +1,99 @@
+name: HustleUp
+options:
+  bundleIdPrefix: com.hustleup
+  deploymentTarget:
+    iOS: "18.0"
+  developmentLanguage: en
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    TARGETED_DEVICE_FAMILY: "1,2"
+    CURRENT_PROJECT_VERSION: "1"
+    MARKETING_VERSION: "1.0.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+targets:
+  HustleUp:
+    type: application
+    platform: iOS
+    sources:
+      - path: HustleUp
+        excludes:
+          - "Info.plist"
+    info:
+      path: HustleUp/Info.plist
+      properties:
+        CFBundleDisplayName: HUSTLE UP
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "1"
+        LSRequiresIPhoneOS: true
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIUserInterfaceStyle: Dark
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.hustleup.app
+        PRODUCT_NAME: HustleUp
+        INFOPLIST_FILE: HustleUp/Info.plist
+        GENERATE_INFOPLIST_FILE: false
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: false
+    scheme:
+      testTargets:
+        - HustleUpTests
+        - HustleUpUITests
+  HustleUpTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: HustleUpTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.hustleup.app.tests
+        GENERATE_INFOPLIST_FILE: true
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/HustleUp.app/HustleUp"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+    dependencies:
+      - target: HustleUp
+  HustleUpUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: HustleUpUITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.hustleup.app.uitests
+        GENERATE_INFOPLIST_FILE: true
+        TEST_TARGET_NAME: HustleUp
+    dependencies:
+      - target: HustleUp
+schemes:
+  HustleUp:
+    build:
+      targets:
+        HustleUp: all
+        HustleUpTests: [test]
+        HustleUpUITests: [test]
+    test:
+      gatherCoverageData: false
+      targets:
+        - name: HustleUpTests
+          parallelizable: true
+        - name: HustleUpUITests
+          parallelizable: false
