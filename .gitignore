@@ -1,68 +1,117 @@
-# macOS
+# ==========================================
+# macOS System Junk & Metadata
+# ==========================================
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon\r
+._*
+.Spotlight-V100
+.Trashes
 
-# Xcode
+# ==========================================
+# Xcode & Developer User Data
+# ==========================================
 DerivedData/
 build/
 xcuserdata/
+*.xcuserdatad/
 *.xcuserstate
-*.moved-aside
 *.xcscmblueprint
 *.xccheckout
+*.xcbkptlist
+*.moved-aside
 *.hmap
+
+# ==========================================
+# Build Artifacts & Packaging
+# ==========================================
 *.ipa
 *.dSYM.zip
 *.dSYM
+*.xcarchive
+*.crash
 
-# Swift Package Manager
+# ==========================================
+# Swift Package Manager (SPM)
+# ==========================================
 .build/
 .swiftpm/
 Packages/
 Package.resolved
 
-# CocoaPods
+# ==========================================
+# CocoaPods & Carthage
+# ==========================================
 Pods/
-
-# Carthage
+*.xcworkspace/Pods
+Podfile.lock
 Carthage/Build/
+Carthage/Checkouts/
 
-# Fastlane generated/local files
+# ==========================================
+# Fastlane Generated Files
+# ==========================================
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/
 fastlane/test_output/
+fastlane/README.md
 
-# Environment files
+# ==========================================
+# Environment Variables & Local Config
+# ==========================================
 .env
 .env.*
 !.env.example
-
-# Local configuration
 *.local
 
-# Credentials
+# ==========================================
+# Credentials, Certificates & Private Keys
+# ==========================================
 *.pem
 *.key
 *.p12
 *.pfx
+*.p8
+*.cer
+*.cert
+*.crt
+*.der
+*.keystore
+*.mobileprovision
+*.provisionprofile
 credentials.json
 *-credentials.json
 service-account.json
 *-service-account.json
 Secrets.plist
-*.p8
-*.mobileprovision
 
-# SSH private keys
+# SSH Keys
 id_rsa
+id_rsa.pub
 id_ed25519
+id_ed25519.pub
+id_ecdsa
+id_ecdsa.pub
 
-# Logs/temp files
+# ==========================================
+# Logs, Temp Files & Editor Caches
+# ==========================================
 *.log
 *.tmp
 *.temp
 *.bak
 *.swp
+*~
+*.orig
+*.rej
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
 
-# Worktrees
+# ==========================================
+# Git Worktrees
+# ==========================================
 .worktrees/
